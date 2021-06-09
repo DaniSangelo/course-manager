@@ -1,7 +1,7 @@
 <h2>Course Info</h2>
 <hr>
 
-<form #courseForm="ngForm"> <!--variável de template-->
+<form #courseForm="ngForm" *ngIf="course"> <!--#courseForm: variável de template-->
 
   <div class="mb-3 row">
     <label class="col-sm-2 col-form-label">Name</label>
@@ -28,7 +28,7 @@
     </div>
   </div>
 
-  <button [disabled]="courseForm.invalid" class="btn btn-primary mb-3" (click)="save"> Save </button>
+  <button [disabled]="courseForm.invalid" class="btn btn-primary mb-3" (click)="save()"> Save </button>
   <button [routerLink]="['/courses']" class="btn btn-secondary mb-3 mr"> Back </button>
 
 </form>
